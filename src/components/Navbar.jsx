@@ -16,7 +16,7 @@ const Navbar = () => {
     setLogo(!logo);
   };
   return (
-    <div className="flex justify-between items-center h-20 p-4">
+    <div className="flex w-full justify-between items-center h-20 p-4 absolute z-10 text-white">
       <h1 onClick={toggleHamburger} className={logo ? "hidden" : "block"}>
         TRAVEL BLOG.
       </h1>
@@ -35,7 +35,7 @@ const Navbar = () => {
         className="sm:hidden z-10 absolute right-4"
       >
         {hamState ? (
-          <AiOutlineClose size={20} className="cursor-pointer" />
+          <AiOutlineClose size={20} className="cursor-pointer text-black" />
         ) : (
           <HiOutlineMenuAlt4 size={20} className="cursor-pointer" />
         )}
@@ -45,7 +45,7 @@ const Navbar = () => {
         onClick={toggleHamburger}
         className={`absolute left-${
           hamState ? "0" : "[-100%]"
-        } top-0 p-5 bg-gray-100/90 w-full`}
+        } top-0 p-5 bg-gray-100/90 w-full text-black`}
       >
         <h1>TRAVEL BLOG.</h1>
         <div className="flex flex-col gap-8 mt-4">

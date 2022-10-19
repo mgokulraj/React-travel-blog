@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Destinations from "./components/Destinations";
+// import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/destinations" element={<Destinations />} />
         </Routes>
+        {/* <Hero /> */}
       </div>
     </Router>
   );
