@@ -1,22 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { BsPerson } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import { useState } from "react";
+// import { BsPerson } from "react-icons/bs";
+// import { BiSearch } from "react-icons/bi";
 
 const Navbar = () => {
   const [hamState, setHamState] = useState(false);
   const [logo, setLogo] = useState(false);
+  const location = useLocation();
 
   const toggleHamburger = () => {
     setHamState(!hamState);
     setLogo(!logo);
   };
   return (
-    <div className="flex w-full justify-between items-center h-20 p-4 absolute z-10 text-white">
+    <div
+      className={`flex w-full justify-between items-center h-20 p-4 absolute z-10 ${
+        location.pathname === "/" ? "text-white" : " text-black  shadow-md"
+      }`}
+    >
       <h1 onClick={toggleHamburger} className={logo ? "hidden" : "block"}>
         TRAVEL BLOG.
       </h1>
@@ -25,10 +29,10 @@ const Navbar = () => {
         <Link to={"/blog"}>Blog</Link>
         <Link to={"/destinations"}>Destinations</Link>
       </div>
-      <div className="hidden sm:flex">
+      {/* <div className={`hidden sm:flex`}>
         <BiSearch className="mr-4" size={20} />
         <BsPerson size={20} />
-      </div>
+      </div> */}
       {/* Hamburger Menu */}
       <div
         onClick={toggleHamburger}
@@ -43,9 +47,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         onClick={toggleHamburger}
-        className={`absolute left-${
-          hamState ? "0" : "[-100%]"
-        } top-0 p-5 bg-gray-100/90 w-full text-black`}
+        className={`absolute left-[-100%] top-0 p-5 bg-gray-100/90 w-full text-black`}
       >
         <h1>TRAVEL BLOG.</h1>
         <div className="flex flex-col gap-8 mt-4">

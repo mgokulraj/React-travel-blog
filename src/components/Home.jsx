@@ -1,7 +1,7 @@
 import React from "react";
 import beachVid from "./../assets/beachVid.mp4";
 
-const Hero = () => {
+const Home = () => {
   return (
     <div className="w-full h-screen relative">
       <video
@@ -16,4 +16,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;
