@@ -47,7 +47,9 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         onClick={toggleHamburger}
-        className={`absolute left-[-100%] top-0 p-5 bg-gray-100/90 w-full text-black`}
+        className={`absolute left-${
+          hamState ? "0" : "[-100%]"
+        } top-0 p-5 bg-gray-100/90 w-full text-black`}
       >
         <h1>TRAVEL BLOG.</h1>
         <div className="flex flex-col gap-8 mt-4">

@@ -1,7 +1,9 @@
 import React from "react";
 import beachVid from "./../assets/beachVid.mp4";
+import TitleUpdate from "./TitleUpdate";
 
 const Home = () => {
+  TitleUpdate("Home");
   return (
     <div className="w-full h-screen relative">
       <video
